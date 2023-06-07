@@ -29,6 +29,9 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Delete previous build
+      run: rm -rf lib
+
     - uses: actions/upload-artifact@v3
       with:
         path: ./lib
@@ -41,7 +44,6 @@ jobs:
     - name: Commit and Push Changes
       if: ${{ github.actor != 'github-actions[bot]' }}
       run: |
-        rm -rf lib
         git add .
         git commit -m "Wrapping"
         git push https://${{ secrets.PAT_TOKEN }}N@github.com/RuMont/alerts.git HEAD:master
