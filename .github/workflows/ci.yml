@@ -1,0 +1,33 @@
+on:
+  push:
+  pull_request:
+    paths: 
+      - '**.ts'
+      - '**.scss'
+
+jobs:
+  tsc:
+    name: tsc
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run lint
+      run: npm run check
+    
+    - name: Run tests
+      run: npm run test
+
+    - name: Build
+      run: npx tsc --build
+      
+    - name: tsc
+      uses: icrawl/action-tsc@v1
