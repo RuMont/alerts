@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "check": "npx eslint . && npx prettier --check .",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "build": "npx tsc --build"
   },
   "repository": {
     "type": "git",
