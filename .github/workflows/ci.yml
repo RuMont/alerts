@@ -34,4 +34,16 @@ jobs:
         path: ./lib
     
     - name: Display structure of uploaded files
-      run: ls -R
+      run: ls !(node.modules) -R
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "RuMont"
+        git config --global user.email "rumont98@gmail.com"
+
+    - name: Commit and Push Changes
+      if: ${{ github.actor != 'github-actions[bot]' }}
+      run: |
+        git add .
+        git commit -m "Wrapping"
+        git push origin HEAD:master

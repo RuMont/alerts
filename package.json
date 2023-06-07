@@ -2,7 +2,7 @@
   "name": "iot-alerts",
   "version": "1.0.0",
   "description": "Alert library",
-  "main": "lib/index.js",
+  "main": "lib/alert.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "check": "npx eslint . && npx prettier --check .",
