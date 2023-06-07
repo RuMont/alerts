@@ -26,11 +26,11 @@ jobs:
     - name: Run tests
       run: npm run test
 
-    - name: Build
-      run: npm run build
-
     - name: Delete previous build
       run: rm -rf lib
+
+    - name: Build
+      run: npm run build
 
     - uses: actions/upload-artifact@v3
       with:
