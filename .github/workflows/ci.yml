@@ -43,4 +43,4 @@ jobs:
       run: |
         git add .
         git commit -m "Wrapping"
-        git push origin HEAD:master
+        git push https://${{ secrets.PAT_TOKEN }}N@github.com/RuMont/alerts.git HEAD:master
