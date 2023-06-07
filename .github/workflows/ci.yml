@@ -29,10 +29,9 @@ jobs:
     - name: Build
       run: npm run build
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/upload-artifact@v3
       with:
-        path: path/to/artifacts
+        path: ./lib
     
-    - name: Display structure of downloaded files
+    - name: Display structure of uploaded files
       run: ls -R
-      working-directory: ./lib
