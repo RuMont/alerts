@@ -28,3 +28,11 @@ jobs:
 
     - name: Build
       run: npm run build
+
+    - uses: actions/download-artifact@v3
+      with:
+        path: path/to/artifacts
+    
+    - name: Display structure of downloaded files
+      run: ls -R
+      working-directory: ./lib
