@@ -32,9 +32,6 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         path: ./lib
-    
-    - name: Display structure of uploaded files
-      run: ls !(node.modules) -R
 
     - name: Configure Git
       run: |
